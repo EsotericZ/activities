@@ -10,9 +10,11 @@ body {
 main {
   display: flex;
   margin-top: 2%;
+  flex-wrap: wrap;
 }
 
 .main-header {
+  flex-wrap: wrap;
   display: flex;
   justify-content: space-between;
   padding: 60px;
