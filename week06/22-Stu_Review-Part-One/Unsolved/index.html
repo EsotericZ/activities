@@ -1,31 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <!-- Why does the `<link>` to `style.css` have to come last? -->
+<!--  because css cascades, if we don't put our style last, it will be overridden by all the other css that we add-->
   <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans:400,400i,700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
   <link rel="stylesheet" href="./assets/css/style.css" />
   <title>Git it Done</title>
 </head>
-
 <body class="flex-column min-100-vh">
   <header class="hero">
     <h1 class="app-title">
       <!-- TODO: What does this `<i>` element do? Where do these classes come from? -->
+<!--  Icons from font-awesome the icons are created by the class that we add to the icon    -->
       <i class="fab fa-github"></i> Git it Done!
     </h1>
     <p>Search for a GitHub user or click on a language to see a list of repositories and how many open issues they have!
     </p>
   </header>
-
-
   <main class="flex-row justify-space-between">
     <div class="col-12 col-md-4">
-
       <div class="card">
         <h3 class="card-header text-uppercase">Search By User</h3>
         <form id="user-form" class="card-body">
@@ -34,26 +31,26 @@
           <button type="submit" class="btn">Get User</button>
         </form>
       </div>
-
       <div class="card">
         <h3 class="card-header text-uppercase">Search By Topic</h3>
         <div id="language-buttons" class="card-body">
           <!-- TODO: How are the `data-language` attributes being used? -->
+<!-- The data-language attribute is being used as values for the search query        -->
           <button data-language="javascript" class="btn">JavaScript</button>
           <button data-language="html" class="btn">HTML</button>
           <button data-language="css" class="btn">CSS</button>
         </div>
       </div>
     </div>
-
     <div class="col-12 col-md-8">
       <h2 class="subtitle">Showing Repositories for: <span id="repo-search-term"></span></h2>
       <!-- TODO: Why is this `<div>` empty? What goes in here? -->
+<!-- It's a placeholder for the repositories search that we are receiving from github googleapis
+      it's empty because there is nothing in it by default, it is just a placeholder
+      -->
       <div id="repos-container" class="list-group"></div>
     </div>
   </main>
-
   <script src="./assets/js/homepage.js"></script>
 </body>
-
 </html>
