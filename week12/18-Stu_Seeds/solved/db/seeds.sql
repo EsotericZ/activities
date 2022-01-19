@@ -4,4 +4,3 @@ VALUES ("spinach", "produce"),
        ("peas-canned", "canned goods"),
        ("ice cream", "frozen"),
        ("potato chips", "snacks");
-       

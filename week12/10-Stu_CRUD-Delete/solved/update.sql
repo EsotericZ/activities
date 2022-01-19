@@ -1,3 +1,3 @@
 UPDATE fiction
 SET name = "Candide";
-WHERE id = "2";
+WHERE id = 002;
