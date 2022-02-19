@@ -7,3 +7,8 @@ const pause = milliSeconds => {
 }
 
 pause(8000);
+
+setTimeout(function() {
+  const btn = document.querySelector('.hide');
+  btn.classList.remove('hide');
+}, 8000);
