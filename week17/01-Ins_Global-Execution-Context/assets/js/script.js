@@ -17,3 +17,31 @@ alert("What's up doc?");
 
 // 4) Calling sayHello, places it on the call stack which creates a new function execution context
 sayHello("Gabby");
+
+
+
+// IN CLASS PROBLEM
+
+// const people = ['Matt', 'John', 'Kirtley', 'Jesus', 'Erna', 'CJ'];
+
+// O(N)
+// const finder = (array, target) => {
+//   for (let i = 0; i < array.length; i++) {
+//     if (target === array[i]) {
+//       return true;
+//     }
+//   }
+//   return false;
+// };
+// console.log(finder(people, 'CJ'));
+
+
+// O(N2)
+// const finder = (array) => {
+//   for (let i = 0; i < array.length; i++) {
+//     for (let j = 0; j < array.length; j++) {
+//       console.log(array[j])
+//     }
+//   }
+// };
+// console.log(finder(people));
