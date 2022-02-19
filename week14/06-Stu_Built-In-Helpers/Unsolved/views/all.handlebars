@@ -13,9 +13,12 @@
         {{dish.dish_name}}
       </p>
     </div>
-    <div class="col-md-7">
-      <p>
-      </p>
-    </div>
+    {{#if dish.has_nuts }}
+      <div class="col-md-7">
+        <p>
+          This dish has nuts
+        </p>
+      </div>
+    {{/if}}
   {{/each}}
 </div>
