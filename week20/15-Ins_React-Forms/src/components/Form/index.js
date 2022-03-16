@@ -29,7 +29,7 @@ function Form() {
       <p>
         Hello {firstName} {lastName}
       </p>
-      <form className="form">
+      <form className="form" onSubmit={handleInputChange}>
         <input
           value={firstName}
           name="firstName"
@@ -44,7 +44,7 @@ function Form() {
           type="text"
           placeholder="Last Name"
         />
-        <button type="button" onClick={handleFormSubmit}>
+        <button type="submit">
           Submit
         </button>
       </form>
