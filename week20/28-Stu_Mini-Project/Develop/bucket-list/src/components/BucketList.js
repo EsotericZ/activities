@@ -9,7 +9,7 @@ function BucketList() {
   const addBucketItem = (item) => {
 
     // TODO: Write logic to add the new bucket item to the bucket state variable
-    
+    setBucket([...bucket, item]);
   };
 
   // Function to mark bucket list item as complete
@@ -27,9 +27,10 @@ function BucketList() {
   // Function to remove bucket list item and update state
   const removeBucketItem = (id) => {
     // TODO: Write logic that will return an array of items that don't contain the ID passed to this function
-
+    const newBucket = bucket.filter((nom) => nom.id != id);
 
     // TODO: Update the bucket state variable
+    setBucket(newBucket);
   };
 
   // Function to edit the bucket list item
