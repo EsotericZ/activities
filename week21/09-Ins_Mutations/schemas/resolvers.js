@@ -22,7 +22,11 @@ const resolvers = {
   Mutation: {
     addSchool: async (parent, { name, location, studentCount }) => {
       // Create and return the new School object
-      return await School.create({ name, location, studentCount });
+      return await School.create({ 
+        name: args.name, 
+        location: args.location, 
+        studentCount: args.studentCount 
+      });
     },
   },
 };
