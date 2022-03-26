@@ -21,6 +21,7 @@ const resolvers = {
 
   Mutation: {
     // TODO: Add comments to each line of code below to describe the functionality below
+    // Take the args passed for the new user and create the User, asign the new user a token, return both
     addUser: async (parent, args) => {
       const user = await User.create(args);
       const token = signToken(user);
@@ -28,22 +29,29 @@ const resolvers = {
       return { token, user };
     },
     // TODO: Add comments to each line of code below to describe the functionality below
+    // When user submits their email and password they user is searched for in the User database by email
     login: async (parent, { email, password }) => {
       const user = await User.findOne({ email });
 
+      // If the user email is not found throw an error
       if (!user) {
         throw new AuthenticationError('Incorrect credentials');
       }
-
+      
+      // Check the user password to see if it matches
       const correctPw = await user.isCorrectPassword(password);
 
+      // If the user password is not correct throw an error
       if (!correctPw) {
         throw new AuthenticationError('Incorrect credentials');
       }
 
+      // correct email and password = set token for the user and return
       const token = signToken(user);
       return { token, user };
     },
+
+    // Take the thoughtText/Author passed for the new thought and create the thought
     addThought: async (parent, { thoughtText, thoughtAuthor }) => {
       const thought = await Thought.create({ thoughtText, thoughtAuthor });
 
